@@ -1,0 +1,20 @@
+<div class="list-group" *ngIf="selectedTenant == null">
+  <button class="list-group-item" active *ngFor="let tenant of tenant" (click)="onSelectedTenant(tenant)">
+      <table align="center">
+          <tr>
+              <td width="20%"><img src="{{ tenant!.image }}" width="100px" height="100px" /></td>
+              <td>{{ tenant.name }}
+                <br> {{ tenant.profession }}
+                <br> {{ tenant.description }}
+                <br> {{ tenant.phone }}
+                <br> Suite: {{ tenant.suite }}
+              <!--  <br> {{ tenant.serviceOne }}
+                <br> {{ tenant.serviceTwo }}
+                <br> {{ tenant.serviceThree }} -->
+              </td>
+          </tr>
+      </table>
+  </button>
+</div>
+
+<app-read-tenant *ngIf="selectedTenant" [tenant]="selectedTenant"></app-read-tenant>

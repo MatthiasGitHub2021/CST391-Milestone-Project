@@ -1,0 +1,56 @@
+<div align="center" style="margin-left:50px;margin-right:50px" *ngIf="!wasSubmitted">
+  <h1>Update Tenant</h1>
+  <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" class="form-control" style="max-width:25%;" aria-describedby="helpName"
+        placeholder="{{this.tenant!.name}}" required [(ngModel)]="tenant!.name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="profession">Profession</label>
+        <input id="profession" type="text" class="form-control" style="max-width:25%;" aria-describedby="helpProfession"
+          placeholder={{this.tenant!.profession}} required [(ngModel)]="tenant!.profession" name="profession">
+      </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" rows="3" class="form-control" style="max-width:25%;"aria-describedby="helpDescription"
+          placeholder={{tenant!.description}} required [(ngModel)]="tenant!.description" name="description"></textarea>
+     </div>
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpPhone"
+          placeholder={{tenant!.phone}} required [(ngModel)]="tenant!.phone" name="phone">
+    </div>
+    <div class="form-group">
+        <label for="image">Image Filename</label>
+        <input id="image" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpImage"
+          placeholder={{tenant!.image}} [(ngModel)]="tenant!.image" name="image">
+    </div>
+    <div class="form-group">
+      <label for="suite">Suite</label>
+      <input id="suite" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpSuite"
+        placeholder={{tenant!.suite}} [(ngModel)]="tenant!.suite" name="suite">
+    </div>
+    <div class="form-group">
+      <label for="serviceOne">Service One</label>
+     <input id="serviceOne" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpServiceOne"
+      placeholder={{tenant!.serviceOne}} [(ngModel)]="tenant!.serviceOne" name="serviceOne">
+    </div>
+    <div class="form-group">
+      <label for="serviceTwo">Service Two</label>
+      <input id="serviceTwo" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpServiceTwo"
+        placeholder={{tenant!.serviceTwo}} [(ngModel)]="tenant!.serviceTwo" name="serviceTwo">
+    </div>
+    <div class="form-group">
+      <label for="serviceThree">Service Three</label>
+      <input id="serviceThree" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpServiceThree"
+        placeholder={{tenant!.serviceThree}} [(ngModel)]="tenant!.serviceThree" name="serviceThree">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+<div  *ngIf="wasSubmitted">
+  Tenant was added successfully.
+</div>

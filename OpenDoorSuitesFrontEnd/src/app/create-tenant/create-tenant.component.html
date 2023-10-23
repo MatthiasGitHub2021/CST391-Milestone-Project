@@ -1,0 +1,47 @@
+<div align="center" style="margin-left:50px;margin-right:50px" *ngIf="!wasSubmitted">
+  <p>{{ tenant.name }}</p>
+  <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" class="form-control" style="max-width:25%;" aria-describedby="helpName" placeholder="Enter the name of the Tenant" required [(ngModel)]="tenant.name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="profession">Profession</label>
+        <input id="profession" type="text" class="form-control" style="max-width:25%;" aria-describedby="helpProfession" placeholder="Enter the name of the profession" required [(ngModel)]="tenant.profession" name="profession">
+      </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" rows="3" class="form-control" style="max-width:25%;"aria-describedby="helpDescription" placeholder="Enter the description of the Tenant" required [(ngModel)]="tenant.description" name="description"></textarea>
+     </div>
+    <div class="form-group">
+        <label for="phone">phone</label>
+        <input id="phone" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpPhone" placeholder="Enter the phone number" required [(ngModel)]="tenant.phone" name="phone">
+    </div>
+    <div class="form-group">
+        <label for="image">Image Filename</label>
+        <input id="image" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpImage" placeholder="Enter the image filename for the Tenant" [(ngModel)]="tenant.image" name="image">
+    </div>
+    <div class="form-group">
+      <label for="suite">Suite</label>
+      <input id="suite" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpSuite" placeholder="Enter the suite for the Tenant" [(ngModel)]="tenant.suite" name="suite">
+    </div>
+    <div class="form-group">
+      <label for="serviceOne">Service One</label>
+     <input id="serviceOne" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpServiceOne" placeholder="Enter service one for the Tenant" [(ngModel)]="tenant.serviceOne" name="serviceOne">
+    </div>
+    <div class="form-group">
+      <label for="serviceTwo">Service Two</label>
+      <input id="serviceTwo" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpServiceTwo" placeholder="Enter service two for the Tenant" [(ngModel)]="tenant.serviceTwo" name="serviceTwo">
+    </div>
+    <div class="form-group">
+      <label for="serviceThree">Service Three</label>
+      <input id="serviceThree" type="text" class="form-control" style="max-width:25%;"aria-describedby="helpServiceThree" placeholder="Enter service three for the Tenant" [(ngModel)]="tenant.serviceThree" name="serviceThree">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+<div  *ngIf="wasSubmitted">
+  Tenant was added successfully.
+</div>
